@@ -54,34 +54,50 @@ This project builds TakeMeter, a classifier that sorts posts from the public Red
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
-
-**Definition:**
-
-**Example 1:**
->
-
-**Example 2:**
->
-
-### `label_two`
-
-**Definition:**
+### `routine_help`
+**Definition:** A personal request asking for direct troubleshooting, routine order optimization, skin condition help, or specific product recommendations for an individual's skin.
 
 **Example 1:**
->
+> [routine help] I don't know what I'm doing wrong (breakout troubleshooting)
 
 **Example 2:**
->
+> [routine help] New to skincare and need some advice on product recommendations
+
+### `product_discussion`
+**Definition:** Posts discussing specific products, chemical filters, or new market releases, including inquiries for product feedback, haul impressions, or ingredient experiences.
+
+**Example 1:**
+> [sun care] Sunscreen reviews from my spring/summer testing
+
+**Example 2:**
+> [sun care] BEMT sunscreens have started hitting the market (sharing news and asking for community thoughts)
+
+### `psa_warning`
+**Definition:** Urgent safety alerts, ingredient warnings, or cautionary advice intended to protect the community from skin harm or purchasing issues.
+
+**Example 1:**
+> [PSA] Please do not put tretinoin under your eyes
+
+**Example 2:**
+> [PSA] Stay away from SA/BHA if you are allergic to aspirin
+
+### `discussion`
+**Definition:** Open community prompts, lifestyle/habit advice, cultural trend critiques, personal journey reflections, or posts seeking shared sentiment/multiple takes.
+
+**Example 1:**
+> [miscellaneous] What are your most controversial skincare takes?
+
+**Example 2:**
+> [personal] Am I the only one that feels skincare culture has gone too far?
 
 ### The hardest boundary
 
-**Which two labels:**
+**Which two labels:** `routine_help` and `discussion` (specifically when a post shares a personal story/experience while also asking for advice or community input).
 
 **The decision rule I used every time:**
 <!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
      if the tone is heated." -->
-
+If the primary goal of the post is to ask for specific advice, recommendations, or troubleshooting for the poster's own face or routine, label it `routine_help`. If the post is primarily sharing a personal story, rant, lifestyle habit, or open reflection to invite shared sentiments and debate across the community, label it `discussion`.
 
 
 ---
