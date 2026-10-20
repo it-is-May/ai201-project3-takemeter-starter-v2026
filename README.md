@@ -41,7 +41,7 @@
 
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
-
+This project builds TakeMeter, a classifier that sorts posts from the public Reddit community r/SkincareAddiction. By reading real community posts, the model categorizes submissions based on three main distinctions: personal routine troubleshooting versus open community prompts, cautionary PSAs and reviews versus personal reflections or cultural critiques, and technical ingredient analysis versus beginner guidance requests. This helps separate high-value informational posts and urgent safety alerts from casual discussion and quick beginner questions.
 
 
 ---
