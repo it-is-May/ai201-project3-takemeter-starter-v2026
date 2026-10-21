@@ -107,19 +107,21 @@ If the primary goal of the post is to ask for specific advice, recommendations, 
 <!-- Where you collected from, how you labelled, your counts, and three hard
      cases. -->
 
-**Where the posts came from:**
+**Where the posts came from:** Public posts scraped/collected from the Reddit community r/SkincareAddiction.
 
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->
+The first 20 posts were labelled completely cold without assistance to establish a baseline honesty check. The remaining 130 posts were pre-labelled in batches using AI and carefully read, verified, and corrected row-by-row against our taxonomy definitions. I stopped at 150 rows per the milestone pacing guideline to ensure high-quality annotations without rushing.
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
-| **Total** |  | 100% |
+| `discussion` | 46 | 30.7% |
+| `routine_help` | 44 | 29.3% |
+| `product_discussion` | 32 | 21.3% |
+| `psa_warning` | 28 | 18.7% |
+| **Total** | **150** | **100%** |
 
 **Three hard cases**
 
@@ -127,25 +129,25 @@ Say so plainly — the disclosure is required, not penalised. -->
      been, and what you chose. These are worth more than the easy 190. -->
 
 **1.**
-> *The post:*
+> *The post:* A post discussing personal experiences stopping an active ingredient and sharing tips ("I'm not saying to stop using sunscreens. I'm just sharing my own experience.") with a `[Personal]` flair.
 >
-> *Could have been:*
+> *Could have been:* `psa_warning` vs. `discussion`
 >
-> *I chose, because:*
+> *I chose, because:* It was sharing a personal reflective tip rather than issuing a strict safety warning or hazard alert.
 
 **2.**
-> *The post:*
+> *The post:* A post discussing new chemical filter trends (like BEMT sunscreens) hitting the market and asking for community thoughts.
 >
-> *Could have been:*
+> *Could have been:* `product_discussion` vs. `discussion`
 >
-> *I chose, because:*
+> *I chose, because:* It specifically centered around specific product ingredients and market releases.
 
 **3.**
-> *The post:*
+> *The post:* A post with a `[PSA]` flair discussing a customer service and shipping issue with a skincare retailer (Dermstore).
 >
-> *Could have been:*
+> *Could have been:* `psa_warning` vs. `discussion`
 >
-> *I chose, because:*
+> *I chose, because:* It was a retailer/purchasing rant rather than a direct clinical skin safety warning, though it carried the PSA tag.
 
 ---
 
