@@ -51,62 +51,47 @@ whether you hit them:
 
 ---
 
-## 1.
+## 1. Overall accuracy is at least 0.65 on the held-out test set across all three seeds.
 
 <!-- Your criterion. It must name a number. -->
 
-
-
-**Why this target:**
-
+**Why this target:** A 4-class random guess baseline is 0.25 (25%). I picked 0.65 because it proves the model learned meaningful distinctions well beyond chance, while providing a safe margin for variance across three random test splits on a 200-item dataset.
 
 
 ---
 
-## 2.
+## 2. Every label achieves an F1 score of at least 0.55 on the held-out test set across all three seeds.
 
 <!-- Your criterion. -->
 
-
-
-**Why this target:**
-
+**Why this target:** While major classes like routine_help will have plenty of training samples, smaller classes like psa_warning will have fewer examples in the test split. Setting a floor of 0.55 ensures the model learns every category effectively without letting smaller classes completely collapse, while remaining realistic against multi-seed variance.
 
 
 ---
 
-## 3.
+## 3. No single label represents more than 45% of the total dataset.
 
 <!-- Your criterion. -->
 
-
-
-**Why this target:**
-
+**Why this target:** In a 4-label taxonomy, a perfectly equal dataset would be 25% per label. Setting a ceiling of 45% (no more than ~90 out of 200 posts) ensures that dominant post types do not overwhelm the training set or cause the classifier to shortcut predictions.
 
 
 ---
 
-## 4.
+## 4. Human labeling agreement is at least 85% (0.85) on a re-labeled sample of 20 posts.
 
 <!-- Your criterion. -->
 
-
-
-**Why this target:**
-
+**Why this target:** In a 4-class taxonomy with nuanced Reddit text, 100% agreement is unrealistic due to hybrid posts. An 85% threshold (agreeing on at least 17 out of 20 posts) proves that the hard boundary decision rules defined in the Label Taxonomy are objective enough for consistent annotation, while leaving a small margin for genuine edge-case ambiguity.
 
 
 ---
 
-## 5.
+## 5. High-confidence model predictions (probability ≥ 0.80) are correct at least 85% of the time.
 
 <!-- Your criterion. -->
 
-
-
-**Why this target:**
-
+**Why this target:** If the model assigns a high certainty score of 80% or greater to a classification, it should be reliably accurate in the vast majority of cases. Setting an 85% precision floor for high-confidence outputs ensures the model's internal probability scores are trustworthy and well-calibrated.
 
 
 ---
