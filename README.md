@@ -181,17 +181,18 @@ Train: 104 | Validation: 23 | Test: 23. Per-label counts in test split: `routine
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Assistance in verifying my initial 30 anchor posts into labels.csv and ensuring adherence to our README decision rules.
+- *What came back:* Boundary classifications and suggested notes for ambiguous cases.
+- *What I changed:* Reviewed boundary classifications (such as shifting routine advice requests to routine_help) to strictly match our taxonomy rules.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- *What I asked for:* Pre-labeling assistance for the remaining bulk posts up to 150 rows while monitoring class balance.
+- *What came back:* Suggested classifications for incoming posts across our four labels.
+- *What I changed:* Verified and corrected classifications row-by-row, ensuring no single label exceeded the 70% share limit and keeping the dataset balanced.
 
 **Pre-labelling disclosure:**
+Rows 1–20 were labelled completely cold without AI assistance. Rows 21–150 were pre-labelled with AI assistance in batches and thoroughly reviewed, checked, and corrected by hand.
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
