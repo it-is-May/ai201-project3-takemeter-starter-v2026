@@ -155,16 +155,17 @@ The first 20 posts were labelled completely cold without assistance to establish
 
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
-**Base model:**
+**Base model:** `distilbert-base-uncased`
 
-**Settings:** <!-- epochs, learning rate, batch size, seed -->
+**Settings:** <!-- epochs, learning rate, batch size, seed --> 
+3 epochs, learning rate 2e-05, batch size 16, seed 42
 
-**Anything I changed from the defaults, and why:**
+**Anything I changed from the defaults, and why:** None. Used default training hyperparameter settings provided in the starter notebook.
 
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
-
+Train: 104 | Validation: 23 | Test: 23. Per-label counts in test split: `routine_help` (7), `discussion` (7), `product_discussion` (5), `psa_warning` (4). Because product_discussion and psa_warning have fewer than 8 test examples, metric scores will have high variance across random seeds.
 
 
 ---
