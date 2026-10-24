@@ -1,0 +1,155 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 23,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 23,
+    "accuracy": 0.4782608695652174,
+    "f1_macro": 0.44293478260869557,
+    "per_label": {
+      "discussion": {
+        "precision": 0.375,
+        "recall": 0.8571428571428571,
+        "f1": 0.5217391304347825,
+        "support": 7
+      },
+      "product_discussion": {
+        "precision": 1.0,
+        "recall": 0.2,
+        "f1": 0.33333333333333337,
+        "support": 5
+      },
+      "psa_warning": {
+        "precision": 0.6,
+        "recall": 0.75,
+        "f1": 0.6666666666666665,
+        "support": 4
+      },
+      "routine_help": {
+        "precision": 1.0,
+        "recall": 0.14285714285714285,
+        "f1": 0.25,
+        "support": 7
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "[Product Request] Where to get azelaic acid for cheap? (otc)\n\nI've been using the Ordinary azelaic acid for a long time and wanted something a bit more (15% instead of 10%). Recently just ordered dermatica's 15% azelaic acid. However, whether I like that product or not they are closing their operations by the end of the year (in the US).\n\nWhere and what should I buy in the future??\n\nFinacea is always out of stock and when it's not its crazy pricey. I've heard some bad things about Melazepam and 20% seems too intense regardless for my sensitive skin.\n\nI did find an indian brand called Aziderm which sells 15% for a slightly more reasonable price but I know nothing about it. Has anyone tried to brand and is it effective?\n\nOr maybe people know others brands?",
+      "gold": "product_discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[Product Request] Tolerable Azelaic Acid Product?\n\nHi! I\u2019m looking for a basic azelaic acid product, and I\u2019ve been disappointed with the ones I\u2019ve tried so far. The Anua serum felt sticky/oily when layered with other products, and the Good Molecules cream was too greasy and it stung.\n\nMy skin is naturally oily and sensitive, so I\u2019m looking for something simple and lightweight without any added actives. Any recommendations? Has anyone tried Peach Slices or the Inkey List? Those were recommended by Google AI, but that platform doesn\u2019t always give the best advice.\n\nThanks!",
+      "gold": "routine_help",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[PSA] SLS may be the cause of your suspected fungal acne / periocular dermatitis\n\nI had a terrible irritation around my eyes that lasted months was looking worse and worse and I was very self conscious about it. I was excluding HA, SA, and niacinimide from my routine because I suspected I was sensitive, and was applying athletes foot cr\u00e8me as was suggested on some forums. I just wanted to let people know that their struggles with dots around the eyes may be caused by SLS, I stopped using cerave blemish cleanser and it suddenly cleared up. Literally overnight after months of struggling with it. I can\u2019t believe I didn\u2019t realise sooner but after reading on this subreddit extensively the cause was staring me right in the face.\n\nI meant perioral in the title sorry!",
+      "gold": "psa_warning",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[PSA] You might be allergic to beeswax!\n\nI just found out I'm allergic to beeswax.\n\nI used to use Burts Bees for years and had to constantly reapply because my lips were always dry and chapped. I tried using Avene Soothing Recovery cream on my face and it gave me a bumpy rash all over my face. I've been using Working Hands Night treatment lotion but started getting itchy bumps on my hands, my derm just gave me some steroid ointment which helped but they kept showing up. I never connected the dots on any of these, I just assumed it was due to having sensitive skin or something.\n\nWell, I went to get allergy patch tested and had a strong contact reaction to propolis (beeswax), I looked into it and found out that it's actually pretty common to be allergic to beeswax!",
+      "gold": "psa_warning",
+      "predicted": "psa_warning"
+    },
+    {
+      "text": "[Personal] Running into conditions out of your control sucks\n\nI've been happy with my skin for many years at this point. I have a routine that's been a cornerstone for a while, and I occasionally add in/take out products out of curiosity. My skin has become very resilient since I fixed my moisture barrier. I get compliments on it from time to time too. Anxiety/stress is a huge trigger for a handful of conditions for me though, especially reflux and panic attacks. Not really skin, however.\n\nBut, due to unforeseen circumstances, I have to look for another job asap. And I'll be alright, I already have more interviews lined up this time than I probably even need, but I've got like cPTSD (/j) or something from being utterly unable to find work for a literal calendar year, 365 days almost on the dot. I'm sorta disabled and I can really only work remote while living in a hyper car-dependent area, and I had to melt my 401k and entire savings to afford bills in 2025. By the time I got an offer I had already spent the last of my funds on my bills and rent.\n\nLike 24 hours after I got that news my hair/scalp and face just got insanely oily out of nowhere, and has been for the last week and a half ish. I had to cut out all my actives cause my moisture barrier was struggling and my skin felt really tight, which I haven't experienced in legit like 7 years. So now I'm just doing maintenance moisturizing, no actives, and it's slowly healing up lmao.\n\nSometimes shit is just out of your control. Hormones, medication, climate, anxiety, whatever it is. It's just SUCH a shock to the system when it happens so suddenly. More of a vent post than anything, I haven't had this sort of thing happen in a while. This ain't the place for it but I'm sure people here can relate to some degree.\n\nAnyhow, I'm waiting on an order of Kikumasamune high-moist lotion since I haven't used it in a couple years and I wanted to give it another shot, especially considering the price to volume. My hada labo hyaluronic lotion came in too, which is perfect timing because my skin drinks that stuff up and I was almost out. I refuse to spend money outside of that because I have no idea what my situation will be in 3 weeks lmao\n\nAny of you have a nearly-overnight skincare scare like this?",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[PSA] Stay away from SA (BHA) if you are allergic to aspirin!\n\nPosting this because neither my doctor nor my dermatologist ever warned me, and I spent years needlessly wrecking my skin. Every time I used salicylic acid (BHA) for face or body acne, I\u2019d break out in clusters of angry, red, inflamed bumps. Everyone in skincare spaces always says \"it's just a purge, push through it!\" so I did. Turns out: aspirin is acetylsalicylic acid. If you have an allergy or cross-sensitivity to aspirin and other NSAIDs like I do, you're likely sensitive to salicylates in general. I only connected the dots when I had stomach issues and randomly read the warning label on a bottle of Pepto-Bismol (bismuth subsalicylate), which explicitly says not to take it if you're allergic to aspirin. I looked at the BHA products on my shelf and felt like an idiot.",
+      "gold": "psa_warning",
+      "predicted": "psa_warning"
+    },
+    {
+      "text": "[MISC] Removing BUTYLENE GLYCOL - life changung for dehydrated acne prone skin\n\nI have oily dehydrated very acne prone skin. I\u2019ve tried every single moisturizer there is: purito oat in calming gel cream, neutrogene hydroboost cream and gel, vanicream, cerave night lotion, lrp cicaplast gel b5, lrp toleriane sensitive fluid, avene cicalfate, iunik beta glucan serum, purito panthenol gel cream, curel intensive moisturizing cream, \u2026 try naming it i probably have used it and no matter what i put my skin is burning and i would wake up with tiny pimple EVERY DAY. I was using active so I was blindly believing that it was the purging, IT WAS NOT. Even when i cut out the actives trying to repair my barrier everything i put on irritates, stings or give me new pimples without the irritation. I thought my skin hates all the popular moisturizing ingredients: niacinamide, hyaluronic acid, beta glucan, panthenol, squalane, and it was especially hard finding skin care products without one or the other. One thing that I was overlooking in my routine is climate: I live in canada where it\u2019s so dry summer or winter. I went to Japan for a bit and even though my skin is still getting new pimple every day it feels like it improved a little. And then one day it hits me my oily dehydrated acne prone skin hates humectants because of the dry climate. I started going through my current routine trying to figure out if there\u2019s any humectant using chatgpt: soonjung ph 5.5 whip cleanser, avene cicalfate intensive serum, benzagel 2.5% benzoyle peroxide and lo behold BUTYLENE GLYCOL was in all of them. I replaced all these products with : Avene cleansing foam, Biossance pure squalane oil and my skin has been thanking me. My old pimples are still there but i don\u2019t wake up with new active ones. Looking back all the products I hated either have hyaluronic acid or butylene glycol in them and I realized that I was not crazy after all!\nTake my advice with a grain of salt I\u2019m not a professional but just letting you know maybe you\u2019re not alone",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[PSA] After years of ordering from Dermstore, I think they are about to lose my business\n\nI've seen the negative reviews on here about Dermstore but never had a bad experience with them, so I kept ordering when I really should have listened.\n\nLast month, I placed an order for the Medik8 Vitamin C serum while it was on sale and received something completely different. Dermstore was quick to send me a return label, but I received an email that my order was on its way back to me for some reason. Dermstore said they were \"working hard\" to fix the issue, but over a week has passed and I have not yet received the package. I contactef customer service a few days ago and they have not presented a solution yet, they just say they raised the issue to their courrier team and will be in touch. I don't understand why they can't just give me a refund when I sent them proof that the package was mailed out.\n\nSecondly, I wanted to give them another chance and placed an order costing over $120. The tracking system has not been updated in a week and I am paranoid that it will just be lost, with me having to fight for a refund.\n\nI've purchased Elta MD sunscreen from them for years, but I may have to look somewhere else. It's a shame since Dermstore has great discounts too...\n\nUpdate: they are resending the correct product to me. Hopefully it arrives!",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[Product Request] vanicream sucks for me\n\nCurrently was using vanicream cleanser and vanicream lotion in pump.\n\nEvery time I use vanicream face wash even once my skin gets tight and irritated and I get tiny red bumps literally the next day. I\u2019ve tried their other face moisturizer and it gave me tons of whiteheads\n\nWhat is 1)a super basic cleanser that isn\u2019t stripping (no cerave or cetaphil)? Is prequel good?\n\nGood SUPER basic lotions. I haven\u2019t used a new lotion or cream in years. I know I\u2019m very prone to clogged poors but also very dehydrated skin. Looking for the most basic face lotion! Since the daily moisturizer didn\u2019t work for me I\u2019m thinking maybe the ceramides? This lotion also burned sometimes",
+      "gold": "routine_help",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[Sun care] SPF degrading in hot weather?\n\nI recently read that storing Sunscreens in hot weather can degrade the SPF in the product. I just ordered Est\u00e9e Lauder\u2019s daywear with the SPF, and noticed my package will probably be on a hot truck from Kentucky for a few days before arriving. Anyone have any idea about how much SPF would be degraded after a week on a 100+ degree truck?\n\nThank you for any advice",
+      "gold": "product_discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[Review] innisfree anti sebum mineral powder\n\nJust putting this out there as this Korean powder is the only thing that has worked for my oily skin. I seem to get around 10 hours before I need to rinse with water, dry and put a bit more on. It also blends in to my skin easy. I was concerned it could be comodegenic but so far so good on that front.\n\nIt's the only product I've tried that actually seems to do what it says. The only other thing that kind of worked was Niacinamide serum, but not in the least bit as good as this.",
+      "gold": "product_discussion",
+      "predicted": "product_discussion"
+    },
+    {
+      "text": "[acne] How to counteract tea tree oil on acne\n\nSo, I recently finally got a dermatologist appointment after years of my mom making me use \"natural things\" for my acne and only having it worsen. I've been taking tretinoin for about a week, and specifically told not to use anything else. My mom wants to me to use pure tea tree oil, and reasoning does not help. She says the medicine hasn't worked, even though I've only been using it a week. I have very sensitive skin and I know this will irritate it, but it looks like there's no going around it. Does anyone know what I can do to help calm the effects, or counteract it?\n\nUPDATE: Thank you everyone for your more or less helpful responses (mostly more!) I have not had to apply it quite yet, but I will try lying about applying it and putting the scent on my clothes, like some of you suggested, who are a lot smarter than me",
+      "gold": "routine_help",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[Personal] Why Are All The Best Whitening Products Only In Asia\n\nLike the title says, I am personally looking to lighten my skin tone a bit because I do have some hyper pigmentation and it's so sad to see that all the best whitening scrubs and whitening moisturizer are all found in countries like Malaysia, Thailand, and Vietnam.\n\nAs a Canadian I'm truly heartbroken because I'd love to try these products but you literally can't get any of them in Cananda.\n\nFor example, I'm really interested in Skin Flare Glutathione Body Scrub but it's literally impossible to get it here. Does anyone know any similar products that can work and ones that can be shipped to Canada specifically?\n\nI'm tired of using Kojic acid soap it doesn't do anything and its like the only easily accessible whitening ingredient to get. I know they're other ingredients like azelaic acid and tranexamic acid, but i can only find low/weak percentages along with low quantity as i need this for my body. I do have azelaic acid 20 percent from kisocare and it works amazingly. Just can't justify spending $25 for 30 mL to use for my body like obviously that's not possible.",
+      "gold": "routine_help",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[Routine Help] Wondering if this is a good / safe routine\n\nI was looking to add a new serum or two into my routine and, in doing research, realized that the routine that I have been using for a few months now may be slowly damaging my skin more than it\u2019s helping it. I tend to overthink things like this and ended up devising an entirely new routine that is much more complex than my current one. Would like help from some of you who are more knowledgeable if any of these products will clash or if some are unnecessary. I realize there are quite a few acids here which I am a little concerned about how they will work together, but I believe they\u2019ll be fine(?) I also tend to stick with the same few companies so I\u2019d be interested if there are any other alternatives I should consider.\n\nThe new routine I came up with is as follows:\n(New additions are The Ordinary Hyaluronic Acid 2% + B5, La Roche Posay Toleriane Hydrating Gentle Cleanser, and The Ordinary Niacinamide 10% + Zinc 1%)\n\nMorning - Every Day:\n\n    Wash with Byoma Acne Clearing Cleanser (2% salicylic acid)\n\n    Tone with Byoma Hyrdating Milky Toner\n\n    Hydrate with The Ordinary Hyaluronic Acid + B5\n\n    Moisturize with La Roche-Posay Toleriane Double Repair\n\n    SPF with Supergoop spf 40\n\nNight - 2x a week - Monday and Friday:\n\n    Wash with La Roche Posay Toleriane Hydrating Gentle Cleanser\n\n    Exfoliate with The Ordinary Lactic Acid 10% + HA\n\n    Tone with Byoma Hydrating Milly Toner\n\n    Hydrate with The Ordinary Hyaluronic Acid 2% + B5\n\n    Moisturize with La Roche-Posay Toleriane Double Repair\n\nNight - 5x a week - Sun, Tues, Wed, Thurs, Sat:\n\n    Wash with La Roche Posay Toleriane Hydrating Gentle Cleanser\n\n    Tone with Byoma Hydrating Milky Toner\n\n    Apply Niacinamide 10% + Zinc 1%\n\n    Hydrate with Hyaluronic Acid 2% + B5\n\n    Moisturize with La Roche-Posay Toleriane Double Repair\n\nI tried to spread out the use of the various acids as best I could so they won\u2019t conflict. Previously I had been using the Byoma Acne Clearing Cleanser twice daily which I found out could be damaging my skin barrier, especially when used alongside The Ordinary Lactic Acid which I had been using twice a week. Thanks in advance for any feedback it is much appreciated!",
+      "gold": "routine_help",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[PSA] I don\u2019t know who needs to hear this but PLEASE rinse and dry your recyclables!\n\nWhenever i go to recycle makeup or skincare products in-store, the recycling bins look like a cesspit. Sometimes they even looked like someone planted their face or wiped their lip on it it looks disgusting \ud83e\udd22 please spare the workers and make it recyclable \ud83d\ude4f\n\nI know its not east to clean but a basic rinse then dry is all you need. Please be mindful :)",
+      "gold": "discussion",
+      "predicted": "psa_warning"
+    },
+    {
+      "text": "[Anti-aging] Very low PA sunscreen for 10 years\u2026has it all been in vain??\n\nI have been religious about applying sunscreen and using good skincare ever since I was 15 (terrible acne and oily skin made me get into it pretty early on). I am now 25.\n\nI don\u2018t know why I didn\u2018t look into the actual PA ratings and UVA coverage all this time though. I am feeling so disappointed and discouraged because the sunscreen I have used daily barely protects against UVA and only has a PA+++ ratings and I am so mad at myself. I started using it because it was so cheap and accessible online and it was so hard to find a sunscreen that didn\u2018t break me out horribly.\n\nThese are the ingredients in my long loved sunscreen which has apparently likely not been doing jack shite for aging:\nWater, Hydrolyzed Collagen,Dicaprylyl Carbonate, Butylene Glycol, Beeswax, Tocopheryl Acetate,Titanium Dioxide, Fragrance,Dimethicone, Adenosine, Aloe Barbadensis (Aloe Vera) Leaf Extract,Glyceryl Stearate, Xanthan Gum,Arbutin, Ethylhexyl Methoxycinnamate, Morus Alba Bark Extract, 1,2-Hexanediol, Methyl Hydroxyethylcellulose, 4-Methylbenzylidene Camphor,Disodium EDTA, Cetearyl Alcohol,Caprylic/ Capric Triglyceride\n\nI have been Germany based for the past 10 years so I am hoping the damage hasn\u2019t been horrible.\nI am so discouraged because the left side of my face has way more fine lines and aging pore sagging than my right side, probably since it is exposed to the sun when I drive. So much money in skincare down the drain as a poor student, just to not be using a proper sunscreen. Sigh\n\nI have now started investing and researching more into filters and proper PA ratings. I now use the Omi verdio uv gel, Kanebo allie uv gel ex, the Anessa sun milk broke me out horribly or else I would have used that as my daily sunscreen. Ive tried so many new sunscreens over the past year and it\u2018s been horribly hard to find something that works for me.\n\nWell, at least I know now!",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[Anti-Aging] do topical peptides actually reach the dermis or are we all just coping?\n\nmy actual question is, is the collagen stimulation effect from topical peptides like matrixyl happening because the peptide physically reaches fibroblasts in the dermis, or is it an epidermal signaling cascade that eventually communicates downward, because those are two very different things and the answer changes how much delivery mechanism like liposomal actually matters.\n\nAlso: if anyone has thoughts on whether long term tretinoin use which thins the stratum corneum actually meaningfully improves peptide penetration to the dermis that would be interesting too.\n\nNot trying to say peptides are useless just trying to understand the actual mechanism because the marketing version and the peer reviewed version seem pretty different.",
+      "gold": "product_discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[PSA] very dull lifeless skin\n\nMy skin is vey dull and i have a bit of dark undereyes , any suggestions on how to make my skin looks healthy and nourished ? I'm a little be anemic and i have digestive problems but nevertheless i would love to hear about your suggestions!",
+      "gold": "routine_help",
+      "predicted": "psa_warning"
+    },
+    {
+      "text": "[PSA] Yall sleeping on AmLactin\n\nI never have posted and have always been lurking on here, but I just gotta tell yall. I am 22F, and I have suffered from acne since middle school. I've had cystic acne on my face, back, and chest, and it has been a source of social isolation and my biggest insecurity. I have tried Accutane, different skincare routines, and have taken oral antibiotics on and off for several years to no significant avail. Last month, I came back from school and noticed my mom had gotten a new lotion from Costco. Since we were out, i started using the AmLactin right out of the shower for the past three weeks, and when I tell yall, this lotion has single-handedly decreased my hyperpigmentation acne scars and recurrence of my back and chest acne. I have never felt so happy and relieved that I have finally found the single product to help mediate my issue. This is literally the holy grail. It also helps with reducing appearance of razor bumps or like that strawberry patch thing. Like yall suffering from acne, please give it a go. it is also cheaper than trying multiple products together. I swear by this thing w my life.",
+      "gold": "product_discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[Personal] I threw away my old sunscreens and started wearing bandana, cap & sunglasses\n\nWas using sunscreen for years and I still tan a lot outdoors. Recently I stopped using sunscreens and switched to physical protection. Chose UPF bandanas to cover the whole face, a cap and sunglasses, while travelling.\n\nMore than 80% of the tan in tropical countries like India caused by direct UV exposure instead of indirect shade exposure. This literally improved by tanning issue a lot. It also saved my sunscreen bills too. I'm not saying to stop using sunscreens. I'm just sharing my own experience.",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[Routine Help] What am I doing wrong?\n\nBackstory: about two months ago, my skin would burn when applying Paula\u2019s Choice exfoliant with BHA so I stopped using it. I continued my skincare routine like normal and had no other issues.\n\nI decided maybe a week ago to attempt to use it again because it worked so well for my skin beforehand. I applied it and there was no burning so I continued to use it. In the shower earlier today, I applied my normal salicylic acid cleanser that I\u2019ve used for years and it slightly burned around my mouth and one of my cheeks (the places I\u2019ve been getting acne like crazy lately). I decided to skip the exfoliant and went it with my normal niacinamide (the Ordinary) and it also burned in the same places.\n\nIs my skin barrier damaged? Do I stop using other products or just get some kind of barrier repair cream? What is going on? I\u2019ve had the same routine for years so I\u2019m perplexed as to what to do and can\u2019t afford a dermatologist.",
+      "gold": "routine_help",
+      "predicted": "routine_help"
+    },
+    {
+      "text": "[sun care] I\u2019m an American visiting the UK, and yes, the sunscreen is that much better. I\u2019m angry\n\nI am visiting the UK right now, and before I came, I researched a bunch of stuff to pick up here that we can\u2019t get in the US. A few hair products, medications, etc. And of course, I decided to get a few sunscreens. I got some for myself, and they are nice\u2014 obviously, better filters, and the formulations are elegant. But as far as formulations, I\u2019ve also worked hard over the years to find some good ones for me in the US, so as far as texture, the difference isn\u2019t a stark compared to what I\u2019ve been using. But oh my God, the options available for my kids here actually make me angry about what\u2019s available at home.\n\nMy oldest has sensitive skin, and she also got her dad\u2018s more melanated skin\u2014 her beautiful skin tone is just dark enough that a white cast will slightly show.. So between that and her sensitivity, finding a good sunscreen for her in the US has been a struggle. Over here? I just grabbed a Nivea sunscreen that was marketed for kids with sensitive skin. The formula? Beautiful. So lightweight. Doesn\u2019t irritate her skin at all. She hates the thick sunscreen we have to use at home to keep her skin from breaking out\u2014 and I agree, it\u2019s thick and doesn\u2019t feel good. On top of which the white cast shows on her skin. Literally the first kids formula I\u2019ve picked up in The UK was so pleasant for her to put on and looked beautiful. And on top of that, it blocks more of the UV rays! The difference is so ridiculous. I am so angry that this option is not available to her in the US. Obviously, I\u2019m taking a few bottles home with us. Unfortunately, we have family in the UK, so we will likely be able to get more in the future (edit: was meant to say \u201cAnd fortunately\u201d but it got typo. Leaving it in because it\u2019s funny). But it shouldn\u2019t be that hard!",
+      "gold": "discussion",
+      "predicted": "discussion"
+    },
+    {
+      "text": "[PSA] Perricone Cold Plasma Sub-d sneaky subscription model\n\nI was looking into creams/routines to help with tightness in my neck, and came across Perricone\u2019s Cold Plasma Sub-D. I ordered from the website subd.com. Anyway, the system will run you about $85, which was reasonable for the amount of products you get. But they smell funky and one of the creams was separating. Anyway, a month later, I got a mysterious charge on my PayPal, and another set of cream showed up. I went into PayPal and blocked them from using it again. Now they\u2019re after me for $200 more, because they claim that the second shipment was $350!!! The fine print when buying the first set indicates that it\u2019s a subscription, but it is so hidden. You also have to call or chat them to cancel- there is no easy way to do it.\n\nTLDR: bad products, predatory business model, stay away.",
+      "gold": "psa_warning",
+      "predicted": "psa_warning"
+    }
+  ]
+}

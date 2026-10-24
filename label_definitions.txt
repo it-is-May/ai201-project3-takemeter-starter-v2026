@@ -5,6 +5,7 @@
 #
 # Delete the examples below and put yours in.
 
-analysis: makes an argument backed by a specific, checkable fact
-hot_take: a confident claim with no support offered
-reaction: an immediate response to something that just happened
+routine_help: A personal request asking for direct troubleshooting, routine order optimization, skin condition help, or specific product recommendations for an individual's skin.
+product_discussion: Posts discussing specific products, chemical filters, or new market releases, including inquiries for product feedback, haul impressions, or ingredient experiences.
+psa_warning: Urgent safety alerts, ingredient warnings, or cautionary advice intended to protect the community from skin harm or purchasing issues.
+discussion: Open community prompts, lifestyle/habit advice, cultural trend critiques, personal journey reflections, or posts seeking shared sentiment/multiple takes.
