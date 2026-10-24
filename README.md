@@ -225,6 +225,13 @@ I predicted my trained model will outperform the baseline on `routine_help` beca
      nothing — and that is a real finding, not a failure. Say it plainly. -->
 The baseline actually outperformed the fine-tuned model on overall accuracy and macro F1, proving that the zero-shot prompt definitions were remarkably strong. However, the fine-tuned model successfully improved on `routine_help` (+0.205), showing that training data helped it capture practical troubleshooting language, even though small sample sizes in categories like `psa_warning` caused the model to struggle elsewhere.
 
+### Baseline Prompting Sensitivity (Definition Ablation)
+To measure the value of explicit taxonomy definitions, the zero-shot baseline was evaluated using only bare label names (without `label_definitions.txt`):
+
+* **Baseline with Definitions:** 0.478 Accuracy (0.443 Macro F1)
+* **Baseline with Bare Labels:** 0.348 Accuracy (0.289 Macro F1)
+
+**Takeaway:** Adding domain-specific definitions to `label_definitions.txt` improved zero-shot baseline accuracy by **+13.0 percentage points** (+0.130). This demonstrates that clear label context significantly guides zero-shot reasoning for r/SkincareAddiction terminology.
 
 ---
 
