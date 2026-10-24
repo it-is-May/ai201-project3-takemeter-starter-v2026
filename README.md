@@ -240,30 +240,36 @@ To measure the value of explicit taxonomy definitions, the zero-shot baseline wa
 <!-- Five criteria across three seeds. The notebook's section 6 prints the
      spread table; the Target and Verdict columns are yours. -->
 
-| Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-|---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.348 | 0.304 | 0.261 | 0.087 |
+| Macro F1 | 0.214 | 0.117 | 0.103 | 0.110 |
+| F1 — `routine_help` | 0.455 | 0.000 | 0.000 | 0.455 |
+| F1 — `product_discussion` | 0.000 | 0.000 | 0.000 | 0.000 |
+| F1 — `psa_warning` | 0.000 | 0.000 | 0.000 | 0.000 |
+| F1 — `discussion` | 0.400 | 0.467 | 0.414 | 0.067 |
+
+Accuracy moved 0.087 across seeds. Enough that a criterion landing within that band can't really be called either way.
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| true \ predicted | routine_help | product_discussion | psa_warning | discussion |
+|---|---|---|---|---|
+| **routine_help** | 5 | 0 | 0 | 2 |
+| **product_discussion** | 3 | 0 | 0 | 2 |
+| **psa_warning** | 3 | 0 | 0 | 1 |
+| **discussion** | 4 | 0 | 0 | 3 |
+
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
 
+The model confused 4 real `discussion` posts as `routine_help`, while only misclassifying 2 `routine_help` posts as `discussion`, showing a slight directional bias toward `routine_help` on this boundary.
 
 
 ---
