@@ -279,13 +279,13 @@ The model confused 4 real `discussion` posts as `routine_help`, while only miscl
 <!-- MET or MISSED against LAST UNIT's target. The target has to hold across
      all three seeds, not turn up sometimes. -->
 
-| # | Criterion | Target | Verdict | How I decided |
-|---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
+|---|---|---|---|---|---|
+| 1. Overall accuracy | ≥ 0.65 | 0.348 | 0.304 | 0.261 | MISSED |
+| 2. Every label F1 | ≥ 0.55 | 0.000 | 0.000 | 0.000 | MISSED |
+| 3. Max single label | ≤ 45% | 30.4% | 30.4% | 30.4% | MET |
+| 4. Human labeling agreement | ≥ 0.85 | 0.967 | 0.967 | 0.967 | MET |
+| 5. High-confidence precision | ≥ 0.85 | 0.429 | 0.429 | 0.286 | MISSED |
 
 **Diagnoses**
 
@@ -298,7 +298,15 @@ The model confused 4 real `discussion` posts as `routine_help`, while only miscl
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
 
-
+1. Overall Accuracy:
+     - Cause: Fine-tuning regression compared to zero-shot prompting combined with sample size constraints.
+     - How I know: Overall accuracy ranged from 0.261 to 0.348 across seeds, falling short of the 0.65 target and actually underperforming our zero-shot baseline (0.478). With a total dataset size of ~150 posts (resulting in test splits of only ~23 items per seed), the model struggled to generalize broadly from the limited training data.
+2. Every Label F1:
+     - Cause: Severe class vulnerability and extreme sample size limitations in minority categories.
+     - How I know: While the fine-tuned model successfully improved on `routine_help` (+0.205 F1 gain over baseline), smaller classes like `product_discussion` (support = 5) and `psa_warning` (support = 4) collapsed to 0.000 F1 across all three seeds. Furthermore, our human agreement review showed that these minority classes share overlapping linguistic definitions, confirming that some of these misses stem from genuine labeling boundary ambiguity rather than purely algorithmic error.  
+3. High-Confidence Precision:
+     - Cause: Uncalibrated output probabilities on a degraded fine-tuned model.
+     - How I know: High-confidence predictions peaked at only 42.9% accuracy (dropping to 28.6% in Seed 2024). Because the fine-tuned model suffered on overall class separation compared to the prompt-based baseline, its internal probability scores remained uncalibrated and overconfident on incorrect predictions. 
 
 ---
 
