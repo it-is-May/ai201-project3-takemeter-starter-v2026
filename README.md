@@ -170,30 +170,6 @@ Train: 104 | Validation: 23 | Test: 23. Per-label counts in test split: `routine
 
 ---
 
-## How I Used AI
-
-<!-- Two specific moments — what you asked, what came back, what you changed.
-
-     ⚠️ Plus disclosure of any pre-labelling. If you had a model pre-label a
-     batch and then read and corrected every one, say that. It's an allowed
-     workflow and disclosing it costs you nothing. Not disclosing it is the
-     problem. -->
-
-**Moment 1**
-
-- *What I asked for:* Assistance in verifying my initial 30 anchor posts into labels.csv and ensuring adherence to our README decision rules.
-- *What came back:* Boundary classifications and suggested notes for ambiguous cases.
-- *What I changed:* Reviewed boundary classifications (such as shifting routine advice requests to routine_help) to strictly match our taxonomy rules.
-
-**Moment 2**
-
-- *What I asked for:* Pre-labeling assistance for the remaining bulk posts up to 150 rows while monitoring class balance.
-- *What came back:* Suggested classifications for incoming posts across our four labels.
-- *What I changed:* Verified and corrected classifications row-by-row, ensuring no single label exceeded the 70% share limit and keeping the dataset balanced.
-
-**Pre-labelling disclosure:**
-Rows 1–20 were labelled completely cold without AI assistance. Rows 21–150 were pre-labelled with AI assistance in batches and thoroughly reviewed, checked, and corrected by hand.
-
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
 
      Don't fill these in during unit 5.
@@ -358,25 +334,50 @@ With a 96.7% agreement rate across 30 posts, my application of the taxonomy rule
 
 ## The Improvement
 
-**What I changed:**
+**What I changed:** Added 30 new labeled posts across the thinnest minority categories to expand the total dataset size from 150 to 180 posts and establish a balanced class distribution (~45 posts per label).
 
-**Which diagnosis pointed at it:**
+**Which diagnosis pointed at it:** Diagnosis #2 (Every Label F1 / Severe class vulnerability), which identified that minority classes collapsed to 0.000 F1 due to insufficient training representation and weak gradient signals.
 
 ### Run Log — After
 
-| Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
-|---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| Measure | Seed 42 | Seed 7 | Seed 2024 | Spread |
+|---|---|---|---|---|
+| Overall accuracy | 0.370 | 0.296 | 0.296 | 0.074 |
+| Macro F1 | 0.290 | 0.191 | 0.200 | 0.100 |
+| F1 — `routine_help` | 0.500 | 0.400 | 0.000 | 0.500 |
+| F1 — `product_discussion` | 0.480 | 0.364 | 0.000 | 0.480 |
+| F1 — `psa_warning` | 0.000 | 0.000 | 0.400 | 0.400 |
+| F1 — `discussion` | 0.182 | 0.000 | 0.400 | 0.400 |
+
+Accuracy moved 0.074 across seeds. Enough that a criterion landing within that band can't really be called either way.
+
+### Confusion Matrix — After
+
+| true \ predicted | routine_help | product_discussion | psa_warning | discussion |
+|---|---|---|---|---|
+| **routine_help** | 3 | 3 | 0 | 1 |
+| **product_discussion** | 0 | 6 | 0 | 1 |
+| **psa_warning** | 0 | 5 | 0 | 1 |
+| **discussion** | 2 | 4 | 0 | 1 |
 
 **Did it help, and how do I know:**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
 
+| Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
+|---|---|---|---|---|---|
+| 1. Overall accuracy | ≥ 0.65 | 0.370 | 0.296 | 0.296 | MISSED |
+| 2. Every label F1 | ≥ 0.55 | 0.000 | 0.000 | 0.000 | MISSED |
+| 3. Max single label | ≤ 45% | 25.0% | 25.0% | 25.0% | MET |
+| 4. Human labeling agreement | ≥ 0.85 | 0.967 | 0.967 | 0.967 | MET |
+| 5. High-confidence precision | ≥ 0.85 | 0.333 | 0.444 | 0.556 | MISSED |
+
+While adding 30 balanced examples successfully met dataset criteria like class distribution balance (Criterion 3) and maintained annotation standards (Criterion 4), **it did not help the model meet its core predictive accuracy or F1 performance thresholds (Criteria 1, 2, and 5 missed)**. 
+
+1. **Overall Accuracy & F1 Collapse:** Overall accuracy remained tightly bounded between 0.296 and 0.370 across seeds (failing the ≥ 0.65 target), and individual label F1 scores still suffered from zero-collapse on specific seeds.
+2. **Confidence Bounds:** High-confidence precision peaked at only 0.556 (Seed 2024), falling well short of the ≥ 0.85 target.
+3. **The Takeaway:** While class balance improved data representation, the model continued to struggle with deep boundary overlaps (such as `psa_warning` bleeding into `product_discussion`), proving that raw data augmentation alone was insufficient without addressing label ambiguity.
 
 
 ---
@@ -385,13 +386,16 @@ With a 96.7% agreement rate across 30 posts, my application of the taxonomy rule
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
-
-
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
 
+The model misclassified 5 real `psa_warning` posts as `product_discussion` while making 0 errors in the reverse direction, revealing a severe lopsided bias toward `product_discussion`. This indicates that the safety warnings shared too much lexical overlap with product discussions for the model to separate them cleanly.
 
+**For each criterion still missed:**
+* **Criteria 1, 2, and 5 (Accuracy, Every Label F1, High-Confidence Precision):** 
+  * *What I'd do next:* Address the lopsided boundary bias by relabeling ambiguous `psa_warning` / `product_discussion` posts or clarifying explicit rules in `label_definitions.txt`.
+  * *Why I stopped:* Milestone 5 requires testing exactly one isolated change at a time ("One change, measured properly, beats four changes you can't tell apart"). Stopping after class balancing allows for a clear, unconfounded baseline of how data volume alone impacts performance.
 
 <!-- ═════════════════════════════════════════════════════════════════════
 
@@ -426,6 +430,37 @@ learned:**
 
      Do not delete and recreate this repository.
      ═════════════════════════════════════════════════════════════════════ -->
+
+---
+
+## How I Used AI
+
+<!-- Two specific moments — what you asked, what came back, what you changed.
+
+     ⚠️ Plus disclosure of any pre-labelling. If you had a model pre-label a
+     batch and then read and corrected every one, say that. It's an allowed
+     workflow and disclosing it costs you nothing. Not disclosing it is the
+     problem. -->
+
+Throughout this project, I used AI as an interactive collaborator to structure code, pre-label data batches, debug evaluation pipelines, and analyze model error patterns.
+
+**Moment 1 (Unit 5 — Baseline Setup & Rules):**
+- *What I asked for:* Assistance in verifying my initial 30 anchor posts into `labels.csv` and ensuring strict adherence to our README decision rules.
+- *What came back:* Boundary classifications and suggested decision notes for ambiguous cases.
+- *What I changed:* Reviewed boundary classifications (such as shifting routine advice requests to `routine_help`) to strictly match our taxonomy rules.
+
+**Moment 2 (Unit 5 — Dataset Expansion & Pre-Labeling):**
+- *What I asked for:* Pre-labeling assistance for the remaining bulk posts up to 150 rows while monitoring class balance.
+- *What came back:* Suggested classifications for incoming posts across our four taxonomy labels.
+- *What I changed:* Verified and corrected classifications row-by-row, ensuring no single label exceeded the 70% share limit and keeping the dataset balanced.
+
+**Moment 3 (Unit 6 — Multi-Seed Evaluation & Pattern Recognition):**
+- *What I asked for:* Assistance in interpreting multi-seed evaluation metrics (`results_three_seeds_after.json`) and spotting directional error patterns in confusion matrices.
+- *What came back:* Analytical insights highlighting the lopsided misclassification bias where 5 real `psa_warning` posts were called `product_discussion` (and 0 the other way).
+- *What I changed:* Used this pattern recognition to ground my "What's Still Broken" diagnosis in empirical evidence, identifying semantic overlap rather than raw sample size as the primary remaining failure mode.
+
+**Pre-labelling disclosure:**
+Rows 1–20 were labelled completely cold without AI assistance. Rows 21–150 and the 30 expansion posts for Milestone 5 were pre-labelled with AI assistance in batches and thoroughly reviewed, checked, and corrected by hand.
 
 ---
 
