@@ -1,66 +1,66 @@
 {
   "seed": 42,
-  "n_test": 23,
-  "accuracy": 0.34782608695652173,
-  "f1_macro": 0.21363636363636362,
+  "n_test": 27,
+  "accuracy": 0.37037037037037035,
+  "f1_macro": 0.29045454545454547,
   "per_label": {
     "routine_help": {
-      "precision": 0.3333333333333333,
-      "recall": 0.7142857142857143,
-      "f1": 0.45454545454545453,
+      "precision": 0.6,
+      "recall": 0.42857142857142855,
+      "f1": 0.5,
       "support": 7
     },
     "product_discussion": {
-      "precision": 0.0,
-      "recall": 0.0,
-      "f1": 0.0,
-      "support": 5
+      "precision": 0.3333333333333333,
+      "recall": 0.8571428571428571,
+      "f1": 0.48,
+      "support": 7
     },
     "psa_warning": {
       "precision": 0.0,
       "recall": 0.0,
       "f1": 0.0,
-      "support": 4
+      "support": 6
     },
     "discussion": {
-      "precision": 0.375,
-      "recall": 0.42857142857142855,
-      "f1": 0.4,
+      "precision": 0.25,
+      "recall": 0.14285714285714285,
+      "f1": 0.18181818181818182,
       "support": 7
     }
   },
   "confusion": {
     "routine_help": {
-      "routine_help": 5,
-      "product_discussion": 0,
+      "routine_help": 3,
+      "product_discussion": 3,
       "psa_warning": 0,
-      "discussion": 2
+      "discussion": 1
     },
     "product_discussion": {
-      "routine_help": 3,
-      "product_discussion": 0,
+      "routine_help": 0,
+      "product_discussion": 6,
       "psa_warning": 0,
-      "discussion": 2
+      "discussion": 1
     },
     "psa_warning": {
-      "routine_help": 3,
-      "product_discussion": 0,
+      "routine_help": 0,
+      "product_discussion": 5,
       "psa_warning": 0,
       "discussion": 1
     },
     "discussion": {
-      "routine_help": 4,
-      "product_discussion": 0,
+      "routine_help": 2,
+      "product_discussion": 4,
       "psa_warning": 0,
-      "discussion": 3
+      "discussion": 1
     }
   },
   "confidence": {
-    "mean_when_right": 0.2905135452747345,
-    "mean_when_wrong": 0.28886187076568604,
-    "accuracy_most_confident_third": 0.42857142857142855,
-    "accuracy_least_confident_third": 0.2857142857142857,
-    "n_per_third": 7
+    "mean_when_right": 0.27104899287223816,
+    "mean_when_wrong": 0.2692723870277405,
+    "accuracy_most_confident_third": 0.3333333333333333,
+    "accuracy_least_confident_third": 0.3333333333333333,
+    "n_per_third": 9
   },
   "device": "cpu",
   "device_name": "CPU",
